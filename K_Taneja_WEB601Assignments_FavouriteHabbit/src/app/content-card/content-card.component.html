@@ -1,8 +1,19 @@
-<div>
-    <div>
-        @for(Items of contentList.Items; track Items.id; let i = $index){
-            <div [innerHTML]="contentList.displayFriendlyHtml(i)">
-            </div>
-        }
-    </div>
-</div>
+<div
+    class="content-card" [ngClass]="{
+    'Cooking': contentItem.type === 'Cooking',
+    'music': contentItem.type === 'Music',
+    'unspecified': !contentItem.type
+  }">
+      <img [src]="contentItem.imgUrl" *ngIf="contentItem.imgUrl" alt="{{ contentItem.title }}" 
+      class="content-card-image" height="200px" width="150px">
+      
+      <div *ngIf="contentItem.imgUrl">
+        
+          <h2>{{ contentItem.title }}</h2>
+
+          <p><strong>Description:</strong> {{ contentItem.description }}</p>
+          <p><strong>Creator:</strong> {{ contentItem.creator }}</p>
+        <p *ngIf="contentItem.type"><strong>Type: </strong>{{ contentItem.type }}</p>
+          <p *ngIf="contentItem.tags && contentItem.tags.length > 0"><strong>Tags:</strong> {{ contentItem.tags.join(', ') }}</p>
+      </div>
+  </div>
