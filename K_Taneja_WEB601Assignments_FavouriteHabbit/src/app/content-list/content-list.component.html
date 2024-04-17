@@ -1,0 +1,21 @@
+<br>
+<div>
+    <input [(ngModel)]="searchTitle" placeholder="Enter Content Title" />
+    <button (click)="checkContentExists()">Search</button>
+    <div [ngStyle]="{'color' : contentExists ? 'green' : 'red'}">{{ message }}</div>
+</div>
+  <app-create-content (createContent)="onContentCreated($event)"></app-create-content> 
+<div>
+    <div *ngFor="let content of contentItems">
+      <app-content-card [contentItem]="content"></app-content-card>
+    </div>
+</div>
+<input type="text" [(ngModel)]="searchTitle" placeholder="Enter title">
+<button (click)="checkContentExists()">Check Existence</button>
+<p [ngStyle]="{'color': contentExists ? 'green' : 'red'}">{{ message }}</p>
+<h1>Cooking</h1>
+<app-content-card *ngFor="let contentItem of contentItems | contentTypeFilter: 'Cooking'" [contentItem]="contentItem"></app-content-card>
+<h2>Music</h2>
+<app-content-card *ngFor="let contentItem of contentItems | contentTypeFilter: 'Music'" [contentItem]="contentItem"></app-content-card>
+<h2>Blank</h2>
+<app-content-card *ngFor="let contentItem of contentItems | contentTypeFilter: ' '" [contentItem]="contentItem"></app-content-card>

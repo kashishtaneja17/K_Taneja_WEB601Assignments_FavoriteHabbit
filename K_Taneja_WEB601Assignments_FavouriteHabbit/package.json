@@ -1,10 +1,6 @@
 {
   "name": "k-taneja-web601-assignments-favourite-habbit",
-<<<<<<< Updated upstream
-  "version": "0.0.1",
-=======
-  "version": "0.0.",
->>>>>>> Stashed changes
+  "version": "0.0.5",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
