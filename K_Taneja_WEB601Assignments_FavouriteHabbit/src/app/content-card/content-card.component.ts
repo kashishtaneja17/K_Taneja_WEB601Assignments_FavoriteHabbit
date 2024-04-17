@@ -11,7 +11,8 @@ import { Contentlist } from '../helper-files/content-list';
   styleUrl: './content-card.component.scss'
 })
 export class ContentCardComponent {
-  contentList: Contentlist = new Contentlist();
+contentList: any;
+  /*contentList: Contentlist = new Contentlist();
 
   constructor(){
     this.contentList.addContent({
@@ -41,5 +42,5 @@ export class ContentCardComponent {
       type: "Hobby",
       tags: ["Travel", "Adventure", "Culture"]
     });
-  }
+  }*/
 }
