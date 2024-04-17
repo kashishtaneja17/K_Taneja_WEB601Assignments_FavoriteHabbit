@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { Contentlist } from '../helper-files/content-list';
-
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HoverAffectDirective } from '../hover-affect.directive';
 
 @Component({
   selector: 'app-content-card',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, HoverAffectDirective],
   templateUrl: './content-card.component.html',
   styleUrl: './content-card.component.scss'
 })
 export class ContentCardComponent {
-  contentList: Contentlist = new Contentlist();
+  @Input() contentItem : any;
+  @Input() item:any;
+  /*contentList: Contentlist = new Contentlist();
 
   constructor(){
     this.contentList.addContent({
@@ -41,5 +42,5 @@ export class ContentCardComponent {
       type: "Hobby",
       tags: ["Travel", "Adventure", "Culture"]
     });
-  }
+  }*/
 }

@@ -1,8 +1,20 @@
-<div>
-    <div>
-        @for(Items of contentList.Items; track Items.id; let i = $index){
-            <div [innerHTML]="contentList.displayFriendlyHtml(i)">
-            </div>
-        }
-    </div>
-</div>
+<div
+    class="content-card" [ngClass]="{
+    'Cooking': contentItem.type === 'Cooking',
+    'music': contentItem.type === 'Music',
+    'unspecified': !contentItem.type
+  }">
+        <img [src]="contentItem.imgUrl" *ngIf="contentItem.imgUrl; else defaultImage" alt="{{ contentItem.title }}" class="content-card-image" height="200px">
+        <ng-template #defaultImage>
+            <img src="https://diatribe.org/cdn-cgi/image/width=500,height=500/sites/default/files/images/Habit%20Stacking(1).jpeg" alt="No set image equal Default Image" class="content-card-image" height="200px">
+        </ng-template>
+      
+        <h2>{{ contentItem.title }}</h2>
+              <p><strong>Description:</strong> {{ contentItem.description }}</p>
+              <p><strong>Creator:</strong> {{ contentItem.creator }}</p>
+              <p *ngIf="contentItem.type" appHoverAffect [affectType]="'underline'"><strong>Type: </strong>{{ contentItem.type }}</p>
+              <p *ngIf="contentItem.tags && contentItem.tags.length > 0">
+                <strong>Tags: </strong>
+                <span *ngFor="let tag of contentItem.tags" appHoverAffect [affectType]="'bold'">{{ tag }}, </span>
+              </p> 
+  </div>
