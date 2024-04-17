@@ -1,6 +1,6 @@
 {
   "name": "k-taneja-web601-assignments-favourite-habbit",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

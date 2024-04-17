@@ -1,0 +1,45 @@
+.content-card {
+    padding: 25px;
+    margin: 10px;
+    border: 1px solid #059fdc;
+    background-color: rgb(60, 247, 184);
+    text-align: left;
+    
+  }
+  .first-item {
+    padding: 15px;
+    margin: 20px;
+    border: 2px solid black;
+    background-color: rgb(243, 156, 217);
+    
+  }
+  .contentItem.imgUrl.imgUrl {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+  h2{
+  color: rgb(226, 85, 85);
+  }
+  h2:first-of-type{
+  color: #7779ec;
+  }
+  h2:last-of-type{
+  color: rgb(159, 123, 45);
+  }
+  button{
+  background-color: rgb(116, 228, 88);
+  padding: 5px 10px;
+  border: 0px;
+  outline: none;
+  transform: none;
+  }
+  button:hover{
+  background-color: #f10202;
+  color: white;
+  }
+  input{
+  padding: 5px 10px;
+  outline: none;
+  margin-right: 5px;
+  }
