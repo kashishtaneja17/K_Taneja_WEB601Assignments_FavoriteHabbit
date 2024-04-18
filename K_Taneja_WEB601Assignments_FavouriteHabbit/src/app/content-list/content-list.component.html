@@ -1,0 +1,12 @@
+<app-modify-content (contentAdded)="onContentAdded($event)"></app-modify-content>
+<br>
+<input type="text" [(ngModel)]="searchTitle" placeholder="Enter title">
+<button (click)="checkContentExists()">Check Existence</button>
+
+<p [ngStyle]="{'color': contentExists ? 'green' : 'red'}">{{ message }}</p>
+<h1>Cooking</h1>
+<app-content-card *ngFor="let contentItem of contentItems | contentTypeFilter: 'Cooking'" [contentItem]="contentItem"></app-content-card>
+<h2>Music</h2>
+<app-content-card *ngFor="let contentItem of contentItems | contentTypeFilter: 'Music'" [contentItem]="contentItem"></app-content-card>
+<h2>Blank</h2>
+<app-content-card *ngFor="let contentItem of contentItems | contentTypeFilter: ' '" [contentItem]="contentItem"></app-content-card>
